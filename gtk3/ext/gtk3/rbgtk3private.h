@@ -191,6 +191,9 @@ G_GNUC_INTERNAL void Init_gtk_page_setup(VALUE mGtk);
 G_GNUC_INTERNAL void Init_gtk_page_setup_unix_dialog(VALUE mGtk);
 G_GNUC_INTERNAL void Init_gtk_paned(VALUE mGtk);
 G_GNUC_INTERNAL void Init_gtk_paper_size(VALUE mGtk);
+#if GTK_CHECK_VERSION(3, 10, 0)
+   G_GNUC_INTERNAL void Init_gtk_places_sidebar(VALUE mGtk);
+#endif
 G_GNUC_INTERNAL void Init_gtk_plug(VALUE mGtk);
 G_GNUC_INTERNAL void Init_gtk_print_context(VALUE mGtk);
 G_GNUC_INTERNAL void Init_gtk_printer(VALUE mGtk);

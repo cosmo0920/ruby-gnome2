@@ -676,6 +676,9 @@ Init_gtk(void)
     Init_gtk_page_setup_unix_dialog(RG_TARGET_NAMESPACE);
     Init_gtk_paned(RG_TARGET_NAMESPACE);
     Init_gtk_paper_size(RG_TARGET_NAMESPACE);
+#if GTK_CHECK_VERSION(3, 10, 0)
+    Init_gtk_places_sidebar(RG_TARGET_NAMESPACE);
+#endif
     Init_gtk_plug(RG_TARGET_NAMESPACE);
     Init_gtk_print_context(RG_TARGET_NAMESPACE);
     Init_gtk_printer(RG_TARGET_NAMESPACE);
