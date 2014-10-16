@@ -16,3 +16,22 @@
 
 require "test-unit"
 require "test/unit/notify"
+
+module Vte3TestUtils
+  def later_version?(major, minor, micro=nil)
+    micro ||= 0
+    vte3_version = [
+      Vte3::MAJOR_VERSION,
+      Vte3::MINOR_VERSION,
+      Vte3::MICRO_VERSION,
+    ]
+    (vte3_version <=> [major, minor, micro]) >= 0
+  end
+
+  def only_vte3_version(major, minor, micro=nil)
+    micro ||= 0
+    unless later_version?(major, minor, micro)
+      omit("Require Vte3 >= #{major}.#{minor}.#{micro}")
+    end
+  end
+end
