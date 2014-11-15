@@ -25,6 +25,7 @@ cairo_gobject_base = File.join(ruby_gnome2_base, "cairo-gobject")
 pango_base = File.join(ruby_gnome2_base, "pango")
 gdk_pixbuf_base = File.join(ruby_gnome2_base, "gdk_pixbuf2")
 gobject_introspection_base = File.join(ruby_gnome2_base, "gobject-introspection")
+gio2_base = File.join(ruby_gnome2_base, "gio2")
 gdk3_base = File.join(ruby_gnome2_base, "gdk3")
 gtk3_base = File.join(ruby_gnome2_base, "gtk3")
 
@@ -35,6 +36,7 @@ gtk3_base = File.join(ruby_gnome2_base, "gtk3")
   [pango_base, "pango"],
   [gdk_pixbuf_base, "gdk_pixbuf2"],
   [gobject_introspection_base, "gobject-introspection"],
+  [gio2_base, "gio2"],
   [gdk3_base, "gdk3"],
   [gtk3_base, "gtk3"]
 ].each do |target, module_name|
