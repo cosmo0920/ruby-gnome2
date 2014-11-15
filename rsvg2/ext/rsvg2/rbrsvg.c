@@ -170,9 +170,12 @@ Init_rsvg2(void)
 {
     VALUE RG_TARGET_NAMESPACE = rb_define_module("RSVG");
 
-#if LIBRSVG_CHECK_VERSION(2, 9, 0)
+#if LIBRSVG_CHECK_VERSION(2, 9, 0) && !LIBRSVG_CHECK_VERSION(2, 36, 0)
     rsvg_init();
     atexit(rsvg_term);
+#endif
+#if !GLIB_CHECK_VERSION(2, 36, 0)
+    g_type_init();
 #endif
 
     G_DEF_ERROR(RSVG_ERROR, "Error", RG_TARGET_NAMESPACE, rb_eRuntimeError, RSVG_TYPE_ERROR);
