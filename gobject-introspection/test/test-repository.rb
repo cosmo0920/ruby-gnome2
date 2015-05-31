@@ -34,8 +34,8 @@ class TestRepository < Test::Unit::TestCase
 
   def test_get_dependencies
     require_version(1, 36, 0)
-    assert_equal(["GObject-2.0"].sort,
-                 @repository.get_dependencies("Gio").sort)
+    assert_include(@repository.get_dependencies("Gio").sort,
+                   "GObject-2.0")
   end
 
   def test_loaded_namespaces
